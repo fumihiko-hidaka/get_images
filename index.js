@@ -50,12 +50,10 @@ const saveImages = async () => {
       const fileExt = mimeExt || linkExt || 'jpg';
       const fileBaseName = `${'0'.repeat(FILE_NAME_LENGTH)}${startIndex}`.slice(-FILE_NAME_LENGTH);
 
-      const downloadFilePath = path.join(saveDir, `${fileBaseName}.${fileExt}`);
-
-      downloader.downloadList.push({
-        downloadPath: downloadFilePath,
-        downloadLink: item.link,
-      });
+      downloader.push(
+        path.join(saveDir, `${fileBaseName}.${fileExt}`),
+        item.link
+      );
     });
 
     console.log(`画像URL取得中 : ${startIndex} / ${GET_ITEM_COUNT}`);

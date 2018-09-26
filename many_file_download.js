@@ -9,11 +9,16 @@ class ManyFileDownloads {
     this.downloadList = [];
     this.running = null;
 
+    this.push.bind(this);
     this.sleep.bind(this);
     this.run.bind(this);
     this.isEnableInsertQueue.bind(this);
     this.insertQueues.bind(this);
     this.join.bind(this);
+  }
+
+  push(downloadPath, downloadLink) {
+    this.downloadList.push({ downloadPath, downloadLink });
   }
 
   sleep() {
