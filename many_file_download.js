@@ -1,8 +1,6 @@
 const fs = require('fs');
 const download = require('download');
 
-require('dotenv').config();
-
 class ManyFileDownloads {
   constructor() {
     this.multiDownloads = 10;
