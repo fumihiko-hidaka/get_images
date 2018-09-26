@@ -2,7 +2,7 @@ const { google } = require('googleapis');
 const customSearch = google.customsearch('v1');
 const mkdirp = require('mkdirp');
 const path = require('path');
-const ManyFileDownloads = require('./many_file_download');
+const ManyFileDownload = require('./many_file_download');
 
 require('dotenv').config();
 
@@ -21,7 +21,7 @@ mkdirp.sync(saveDir);
 const searchNum = 10;
 let startIndex = 0;
 
-const downloader = new ManyFileDownloads();
+const downloader = new ManyFileDownload();
 downloader.run();
 
 const saveImages = async () => {

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const download = require('download');
 
-class ManyFileDownloads {
+class ManyFileDownload {
   constructor() {
     this.multiDownloads = 10;
 
@@ -72,4 +72,4 @@ class ManyFileDownloads {
   };
 }
 
-module.exports = ManyFileDownloads;
+module.exports = ManyFileDownload;
