@@ -67,7 +67,8 @@ saveImages()
   .then(() => {
     console.log('end')
   })
-  .catch(e => {
+  .catch(async e => {
     console.error(e);
     console.error('error');
+    await downloader.join();
   });

@@ -62,11 +62,13 @@ class ManyFileDownload {
   };
 
   async join() {
-    do {
-      await this.sleep();
-    } while (this.downloadList.length + this.queue.length > 0);
+    if (this.running) {
+      do {
+        await this.sleep();
+      } while (this.downloadList.length + this.queue.length > 0);
 
-    clearInterval(this.running);
+      clearInterval(this.running);
+    }
 
     return true;
   };
